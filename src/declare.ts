@@ -21,3 +21,13 @@ export type QueryAccountResponse = {
 
     readonly accounts: QueryAccountElement[];
 };
+
+export type QueryOrganizationRequest = {
+
+    readonly tags: string[];
+};
+
+export type QueryOrganizationResponse = {
+
+    readonly names: string[];
+};

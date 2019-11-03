@@ -4,7 +4,7 @@
  * @description Bamboo
  */
 
-import { QueryAccountRequest, QueryAccountResponse } from "./declare";
+import { QueryAccountRequest, QueryAccountResponse, QueryOrganizationRequest, QueryOrganizationResponse } from "./declare";
 import { GreenLink } from "./link";
 
 export class Bamboo {
@@ -29,7 +29,14 @@ export class Bamboo {
 
     public async queryAccount(body: QueryAccountRequest): Promise<QueryAccountResponse> {
 
-        const response: QueryAccountResponse = await this._link.post<QueryAccountResponse>(body);
+        const response: QueryAccountResponse = await this._link.post<QueryAccountResponse>(body, 'account', 'query');
+
+        return response;
+    }
+
+    public async queryOrganization(body: QueryOrganizationRequest): Promise<QueryOrganizationResponse> {
+
+        const response: QueryOrganizationResponse = await this._link.post<QueryOrganizationResponse>(body, 'organization', 'query');
 
         return response;
     }
