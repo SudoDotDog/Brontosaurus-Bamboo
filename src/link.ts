@@ -22,6 +22,36 @@ export class GreenLink {
         this._auth = auth;
     }
 
+    public get<T>(...path: string[]): Promise<T> {
+
+        return new Promise<T>((resolve: (result: T) => void, reject: (reason: any) => void) => {
+
+            const options: Request.Options = {
+                uri: this.joinPath(...path),
+                headers: {
+                    Authorization: this._getAuthentication(),
+                },
+                method: 'GET',
+                json: {},
+            };
+
+            Request(options, (error: any, response: Request.Response, body: T) => {
+
+                if (Boolean(error)) {
+                    reject(error);
+                    return;
+                }
+
+                if (response.statusCode !== 200) {
+                    reject(response.statusCode);
+                    return;
+                }
+
+                resolve(body);
+            });
+        });
+    }
+
     public post<T>(body: Record<string, any>, ...path: string[]): Promise<T> {
 
         return new Promise<T>((resolve: (result: T) => void, reject: (reason: any) => void) => {
