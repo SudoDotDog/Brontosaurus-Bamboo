@@ -8,5 +8,6 @@ export * from "./bamboo";
 export * from "./declare/common";
 export * from "./declare/organization";
 export * from "./declare/query";
+export * from "./declare/validate";
 export * from "./link";
 
