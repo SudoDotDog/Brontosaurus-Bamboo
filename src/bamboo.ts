@@ -4,8 +4,8 @@
  * @description Bamboo
  */
 
-import { InplodeOrganizationRequest, InplodeOrganizationResponse } from "./declare/organization";
-import { QueryAccountRequest, QueryAccountResponse, QueryOrganizationRequest, QueryOrganizationResponse } from "./declare/query";
+import { QueryAccountRequest, QueryAccountResponse } from "./declare/account";
+import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse } from "./declare/organization";
 import { ValidateBridgeRequest, ValidateBridgeResponse } from "./declare/validate";
 import { GreenLink } from "./link";
 

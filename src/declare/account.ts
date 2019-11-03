@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Declare
- * @description Query
+ * @description Account
  */
 
 export type QueryAccountRequest = {
@@ -20,14 +20,4 @@ export type QueryAccountElement = {
 export type QueryAccountResponse = {
 
     readonly accounts: QueryAccountElement[];
-};
-
-export type QueryOrganizationRequest = {
-
-    readonly tags: string[];
-};
-
-export type QueryOrganizationResponse = {
-
-    readonly names: string[];
 };
