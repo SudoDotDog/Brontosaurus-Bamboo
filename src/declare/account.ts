@@ -4,6 +4,14 @@
  * @description Account
  */
 
+export type DetailAccountResponse = {
+
+    readonly username: string;
+    readonly email?: string;
+    readonly phone?: string;
+    readonly displayName?: string;
+};
+
 export type QueryAccountRequest = {
 
     readonly organizations: string[];
