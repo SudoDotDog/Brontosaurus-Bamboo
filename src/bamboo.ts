@@ -6,7 +6,7 @@
 
 import { DetailAccountResponse, LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse } from "./declare/account";
 import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse } from "./declare/organization";
-import { ValidateBridgeRequest, ValidateBridgeResponse } from "./declare/validate";
+import { ValidateBridgeRequest, ValidateBridgeResponse, ValidateDirectRequest, ValidateDirectResponse } from "./declare/validate";
 import { GreenLink } from "./link";
 
 export class Bamboo {
@@ -57,6 +57,11 @@ export class Bamboo {
     public async validateBridge(body: ValidateBridgeRequest): Promise<ValidateBridgeResponse> {
 
         return await this._link.post<ValidateBridgeResponse>(body, 'validate', 'bridge');
+    }
+
+    public async validateDirect(body: ValidateDirectRequest): Promise<ValidateDirectResponse> {
+
+        return await this._link.post<ValidateDirectResponse>(body, 'validate', 'direct');
     }
 
     public joinPath(...path: string[]): string {
