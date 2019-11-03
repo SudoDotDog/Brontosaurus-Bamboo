@@ -4,6 +4,7 @@
  * @description Bamboo
  */
 
+import { InplodeOrganizationRequest, InplodeOrganizationResponse } from "./declare/organization";
 import { QueryAccountRequest, QueryAccountResponse, QueryOrganizationRequest, QueryOrganizationResponse } from "./declare/query";
 import { GreenLink } from "./link";
 
@@ -29,23 +30,17 @@ export class Bamboo {
 
     public async queryAccount(body: QueryAccountRequest): Promise<QueryAccountResponse> {
 
-        const response: QueryAccountResponse = await this._link.post<QueryAccountResponse>(body, 'account', 'query');
-
-        return response;
+        return await this._link.post<QueryAccountResponse>(body, 'account', 'query');
     }
 
     public async queryOrganization(body: QueryOrganizationRequest): Promise<QueryOrganizationResponse> {
 
-        const response: QueryOrganizationResponse = await this._link.post<QueryOrganizationResponse>(body, 'organization', 'query');
-
-        return response;
+        return await this._link.post<QueryOrganizationResponse>(body, 'organization', 'query');
     }
 
-    public async inplodeOrganization(body: QueryOrganizationRequest): Promise<QueryOrganizationResponse> {
+    public async inplodeOrganization(body: InplodeOrganizationRequest): Promise<InplodeOrganizationResponse> {
 
-        const response: QueryOrganizationResponse = await this._link.post<QueryOrganizationResponse>(body, 'organization', 'query');
-
-        return response;
+        return await this._link.post<InplodeOrganizationResponse>(body, 'organization', 'inplode');
     }
 
     public joinPath(...path: string[]): string {

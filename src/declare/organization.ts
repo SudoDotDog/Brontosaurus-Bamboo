@@ -18,3 +18,10 @@ export type InplodeOrganizationRequest = {
     readonly ownerEmail?: string;
     readonly ownerPhone?: string;
 };
+
+export type InplodeOrganizationResponse = {
+
+    readonly account: string;
+    readonly organization: string;
+    readonly tempPassword: string;
+};
