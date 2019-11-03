@@ -15,10 +15,13 @@
     "url": "https://github.com/SudoDotDog/Brontosaurus-Bamboo/issues"
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Bamboo#readme",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.88.0"
+  },
   "devDependencies": {
     "@sudoo/io": "^1.6.1",
-    "@sudoo/triforce": "^1.9.0"
+    "@sudoo/triforce": "^1.9.0",
+    "@types/request": "^2.48.3"
   },
   "nyc": {
     "extension": [
