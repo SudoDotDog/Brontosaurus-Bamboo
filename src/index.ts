@@ -5,6 +5,8 @@
  */
 
 export * from "./bamboo";
-export * from "./declare";
+export * from "./declare/common";
+export * from "./declare/organization";
+export * from "./declare/query";
 export * from "./link";
 

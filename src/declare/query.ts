@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
- * @namespace Bamboo
- * @description Declare
+ * @namespace Declare
+ * @description Query
  */
 
 export type QueryAccountRequest = {
