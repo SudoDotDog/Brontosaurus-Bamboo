@@ -27,7 +27,7 @@ export class GreenLink {
         return new Promise<T>((resolve: (result: T) => void, reject: (reason: any) => void) => {
 
             const options: Request.Options = {
-                uri: this.joinPath(this._path, ...path),
+                uri: this.joinPath(...path),
                 headers: {
                     Authorization: this._getAuthentication(),
                 },
@@ -54,7 +54,7 @@ export class GreenLink {
 
     public joinPath(...path: string[]): string {
 
-        return [this._auth, ...path].join('/');
+        return [this._path, ...path].join('/');
     }
 
     private _getAuthentication(): string {
