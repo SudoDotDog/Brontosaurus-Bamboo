@@ -12,6 +12,17 @@ export type DetailAccountResponse = {
     readonly displayName?: string;
 };
 
+export type LimboAccountRequest = {
+
+    readonly username: string;
+};
+
+export type LimboAccountResponse = {
+
+    readonly limbo: boolean;
+    readonly tempPassword: string;
+};
+
 export type QueryAccountRequest = {
 
     readonly organizations: string[];

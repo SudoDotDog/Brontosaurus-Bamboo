@@ -4,7 +4,7 @@
  * @description Bamboo
  */
 
-import { DetailAccountResponse, QueryAccountRequest, QueryAccountResponse } from "./declare/account";
+import { DetailAccountResponse, LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse } from "./declare/account";
 import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse } from "./declare/organization";
 import { ValidateBridgeRequest, ValidateBridgeResponse } from "./declare/validate";
 import { GreenLink } from "./link";
@@ -32,6 +32,11 @@ export class Bamboo {
     public async detailAccount(username: string): Promise<DetailAccountResponse> {
 
         return await this._link.get<DetailAccountResponse>('account', 'detail', encodeURIComponent(username));
+    }
+
+    public async limboAccount(body: LimboAccountRequest): Promise<LimboAccountResponse> {
+
+        return await this._link.post<LimboAccountResponse>(body, 'account', 'limbo');
     }
 
     public async queryAccount(body: QueryAccountRequest): Promise<QueryAccountResponse> {
