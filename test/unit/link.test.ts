@@ -15,8 +15,8 @@ describe('Given {GreenLink} Class', (): void => {
 
     it('should be able to construct', (): void => {
 
-        const path: string = chance.string();
-        const auth: string = chance.string();
+        const path: string = `https://${chance.string()}.com`;
+        const auth: string = `${chance.string()}:${chance.string()}`;
 
         const link: GreenLink = GreenLink.create(path, auth);
 

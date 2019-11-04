@@ -11,8 +11,6 @@ import { validateGreenPath } from '../../src/util';
 
 describe('Given [Util] Help Functions', (): void => {
 
-    const chance: Chance.Chance = new Chance('bamboo-util');
-
     it('should be able to validate green path - 1', (): void => {
 
         const url: string = 'https://example.com';

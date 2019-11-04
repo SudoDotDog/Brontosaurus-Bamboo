@@ -5,10 +5,19 @@
  */
 
 import * as Request from "request";
+import { validateGreenAuth, validateGreenPath } from "./util";
 
 export class GreenLink {
 
     public static create(path: string, auth: string) {
+
+        if (!validateGreenPath(path)) {
+            throw new Error('[Brontosaurus-Bamboo] Invalid Path');
+        }
+
+        if (!validateGreenAuth(auth)) {
+            throw new Error('[Brontosaurus-Bamboo] Invalid Auth');
+        }
 
         return new GreenLink(path, auth);
     }
