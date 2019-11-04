@@ -13,6 +13,7 @@ export type InplodeOrganizationRequest = {
     readonly ownerInfos: Record<string, Basics>;
     readonly ownerUsername: string;
     readonly ownerGroups: string[];
+    readonly ownerTags: string[];
 
     readonly ownerDisplayName?: string;
     readonly ownerEmail?: string;
