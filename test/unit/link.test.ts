@@ -22,4 +22,28 @@ describe('Given {GreenLink} Class', (): void => {
 
         expect(link).to.be.instanceOf(GreenLink);
     });
+
+    it('should be able to throw error - 1', (): void => {
+
+        const path: string = chance.string();
+        const auth: string = `${chance.string()}:${chance.string()}`;
+
+        const exec = () => {
+
+            GreenLink.create(path, auth);
+        };
+        expect(exec).to.be.throw('[Brontosaurus-Bamboo] Invalid Path');
+    });
+
+    it('should be able to throw error - 2', (): void => {
+
+        const path: string = `https://${chance.string()}.com`;
+        const auth: string = chance.string();
+
+        const exec = () => {
+
+            GreenLink.create(path, auth);
+        };
+        expect(exec).to.be.throw('[Brontosaurus-Bamboo] Invalid Auth');
+    });
 });
