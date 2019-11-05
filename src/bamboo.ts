@@ -5,7 +5,7 @@
  */
 
 import { DetailAccountResponse, LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse } from "./declare/account";
-import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse } from "./declare/organization";
+import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse, VerifyOrganizationResponse } from "./declare/organization";
 import { ValidateBridgeRequest, ValidateBridgeResponse, ValidateDirectRequest, ValidateDirectResponse } from "./declare/validate";
 import { GreenLink } from "./link";
 
@@ -31,7 +31,7 @@ export class Bamboo {
 
     public async detailAccount(username: string): Promise<DetailAccountResponse> {
 
-        return await this._link.get<DetailAccountResponse>('account', 'detail', encodeURIComponent(username));
+        return await this._link.get<DetailAccountResponse>('account', 'detail', username);
     }
 
     public async limboAccount(body: LimboAccountRequest): Promise<LimboAccountResponse> {
@@ -52,6 +52,11 @@ export class Bamboo {
     public async inplodeOrganization(body: InplodeOrganizationRequest): Promise<InplodeOrganizationResponse> {
 
         return await this._link.post<InplodeOrganizationResponse>(body, 'organization', 'inplode');
+    }
+
+    public async verifyOrganization(name: string): Promise<VerifyOrganizationResponse> {
+
+        return await this._link.get<VerifyOrganizationResponse>('organization', 'verify', name);
     }
 
     public async validateBridge(body: ValidateBridgeRequest): Promise<ValidateBridgeResponse> {
