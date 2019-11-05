@@ -93,7 +93,7 @@ export class GreenLink {
 
     public joinPath(...path: string[]): string {
 
-        return [this._path, ...path].join('/');
+        return [this._path, ...path].map((slice: string) => encodeURIComponent(slice)).join('/');
     }
 
     private _getAuthentication(): string {
