@@ -36,3 +36,17 @@ export type QueryOrganizationResponse = {
 
     readonly names: string[];
 };
+
+export type OrganizationLite = {
+
+    readonly name: string;
+};
+
+export type VerifyOrganizationResponse = {
+
+    readonly valid: false;
+} | {
+
+    readonly valid: true;
+    readonly organization: OrganizationLite;
+};
