@@ -6,6 +6,11 @@
 
 import { Basics } from "./common";
 
+export type OrganizationLite = {
+
+    readonly name: string;
+};
+
 export type InplodeOrganizationRequest = {
 
     readonly organizationName: string;
@@ -35,11 +40,6 @@ export type QueryOrganizationRequest = {
 export type QueryOrganizationResponse = {
 
     readonly names: string[];
-};
-
-export type OrganizationLite = {
-
-    readonly name: string;
 };
 
 export type VerifyOrganizationResponse = {

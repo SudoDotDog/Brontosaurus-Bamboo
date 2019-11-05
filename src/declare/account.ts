@@ -4,6 +4,12 @@
  * @description Account
  */
 
+export type AccountLite = {
+
+    readonly username: string;
+    readonly displayName?: string;
+};
+
 export type DetailAccountResponse = {
 
     readonly username: string;
@@ -39,4 +45,13 @@ export type QueryAccountElement = {
 export type QueryAccountResponse = {
 
     readonly accounts: QueryAccountElement[];
+};
+
+export type VerifyAccountResponse = {
+
+    readonly valid: false;
+} | {
+
+    readonly valid: true;
+    readonly account: AccountLite;
 };
