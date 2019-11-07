@@ -12,6 +12,7 @@ export type AccountLite = {
 
 export type DetailAccountResponse = {
 
+    readonly active: boolean;
     readonly username: string;
     readonly email?: string;
     readonly phone?: string;
