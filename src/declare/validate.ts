@@ -11,7 +11,7 @@ export type ValidateBridgeRequest = {
 
 export type ValidateBridgeResponse = {
 
-    readonly valid: string;
+    readonly valid: boolean;
     readonly name: string;
     readonly key: string;
 };
