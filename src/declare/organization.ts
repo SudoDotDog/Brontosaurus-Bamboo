@@ -42,6 +42,26 @@ export type QueryOrganizationResponse = {
     readonly names: string[];
 };
 
+export type RegisterSubAccountRequest = {
+
+    readonly organization: string;
+
+    readonly username: string;
+    readonly userInfos: Record<string, Basics>;
+    readonly userGroups: string[];
+    readonly userTags: string[];
+
+    readonly userDisplayName?: string;
+    readonly userEmail?: string;
+    readonly userPhone?: string;
+};
+
+export type RegisterSubAccountResponse = {
+
+    readonly account: string;
+    readonly tempPassword: string;
+};
+
 export type VerifyOrganizationResponse = {
 
     readonly valid: false;
