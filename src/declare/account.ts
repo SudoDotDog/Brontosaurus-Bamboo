@@ -4,6 +4,8 @@
  * @description Account
  */
 
+import { Basics } from "./common";
+
 export type AccountLite = {
 
     readonly username: string;
@@ -46,6 +48,24 @@ export type QueryAccountElement = {
 export type QueryAccountResponse = {
 
     readonly accounts: QueryAccountElement[];
+};
+
+export type RegisterAccountRequest = {
+
+    readonly username: string;
+    readonly userInfos: Record<string, Basics>;
+    readonly userGroups: string[];
+    readonly userTags: string[];
+
+    readonly userDisplayName?: string;
+    readonly userEmail?: string;
+    readonly userPhone?: string;
+};
+
+export type RegisterAccountResponse = {
+
+    readonly account: string;
+    readonly tempPassword: string;
 };
 
 export type VerifyAccountResponse = {
