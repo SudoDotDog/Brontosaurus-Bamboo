@@ -4,7 +4,7 @@
  * @description Account
  */
 
-import { Basics } from "./common";
+import { Basics, CommonRegisterAccountResponse } from "./common";
 
 export type AccountLite = {
 
@@ -62,11 +62,7 @@ export type RegisterAccountRequest = {
     readonly userPhone?: string;
 };
 
-export type RegisterAccountResponse = {
-
-    readonly account: string;
-    readonly tempPassword: string;
-};
+export type RegisterAccountResponse = CommonRegisterAccountResponse;
 
 export type VerifyAccountResponse = {
 

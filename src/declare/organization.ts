@@ -4,7 +4,7 @@
  * @description Organization
  */
 
-import { Basics } from "./common";
+import { Basics, CommonRegisterAccountResponse } from "./common";
 
 export type OrganizationLite = {
 
@@ -27,10 +27,8 @@ export type InplodeOrganizationRequest = {
 
 export type InplodeOrganizationResponse = {
 
-    readonly account: string;
     readonly organization: string;
-    readonly tempPassword: string;
-};
+} & CommonRegisterAccountResponse;
 
 export type QueryOrganizationRequest = {
 
@@ -56,11 +54,7 @@ export type RegisterSubAccountRequest = {
     readonly userPhone?: string;
 };
 
-export type RegisterSubAccountResponse = {
-
-    readonly account: string;
-    readonly tempPassword: string;
-};
+export type RegisterSubAccountResponse = CommonRegisterAccountResponse;
 
 export type VerifyOrganizationResponse = {
 
