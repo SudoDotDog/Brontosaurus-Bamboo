@@ -12,15 +12,6 @@ export type AccountLite = {
     readonly displayName?: string;
 };
 
-export type DetailAccountResponse = {
-
-    readonly active: boolean;
-    readonly username: string;
-    readonly email?: string;
-    readonly phone?: string;
-    readonly displayName?: string;
-};
-
 export type LimboAccountRequest = {
 
     readonly username: string;
@@ -62,7 +53,14 @@ export type RegisterAccountRequest = {
     readonly userPhone?: string;
 };
 
-export type RegisterAccountResponse = CommonRegisterAccountResponse;
+export type UpdateAccountRouteRequest = {
+
+    readonly username: string;
+
+    readonly displayName?: string;
+    readonly email?: string;
+    readonly phone?: string;
+};
 
 export type VerifyAccountResponse = {
 

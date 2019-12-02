@@ -4,7 +4,8 @@
  * @description Bamboo
  */
 
-import { DetailAccountResponse, LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, RegisterAccountResponse, VerifyAccountResponse } from "./declare/account";
+import { LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRouteRequest, VerifyAccountResponse } from "./declare/account";
+import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse } from "./declare/common";
 import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse, RegisterSubAccountRequest, RegisterSubAccountResponse, VerifyOrganizationResponse } from "./declare/organization";
 import { ValidateBridgeRequest, ValidateBridgeResponse, ValidateDirectRequest, ValidateDirectResponse } from "./declare/validate";
 import { GreenLink } from "./link";
@@ -29,9 +30,9 @@ export class Bamboo {
         this._link = GreenLink.create(this._path, this._auth);
     }
 
-    public async detailAccount(username: string): Promise<DetailAccountResponse> {
+    public async detailAccount(username: string): Promise<CommonAccountStatusDetailResponse> {
 
-        return await this._link.get<DetailAccountResponse>('account', 'detail', username);
+        return await this._link.get<CommonAccountStatusDetailResponse>('account', 'detail', username);
     }
 
     public async limboAccount(body: LimboAccountRequest): Promise<LimboAccountResponse> {
@@ -44,9 +45,14 @@ export class Bamboo {
         return await this._link.post<QueryAccountResponse>(body, 'account', 'query');
     }
 
-    public async registerAccount(body: RegisterAccountRequest): Promise<RegisterAccountResponse> {
+    public async registerAccount(body: RegisterAccountRequest): Promise<CommonRegisterAccountResponse> {
 
-        return await this._link.post<RegisterAccountResponse>(body, 'account', 'register');
+        return await this._link.post<CommonRegisterAccountResponse>(body, 'account', 'register');
+    }
+
+    public async updateAccount(body: UpdateAccountRouteRequest): Promise<CommonAccountStatusDetailResponse> {
+
+        return await this._link.post<CommonAccountStatusDetailResponse>(body, 'account', 'update');
     }
 
     public async verifyAccount(username: string): Promise<VerifyAccountResponse> {
