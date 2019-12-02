@@ -5,6 +5,7 @@
  */
 
 import { LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRouteRequest, VerifyAccountResponse } from "./declare/account";
+import { AccountHistoryRecordRequest, AccountHistoryRecordResponse } from "./declare/account-history";
 import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse } from "./declare/common";
 import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse, RegisterSubAccountRequest, RegisterSubAccountResponse, VerifyOrganizationResponse } from "./declare/organization";
 import { ValidateBridgeRequest, ValidateBridgeResponse, ValidateDirectRequest, ValidateDirectResponse } from "./declare/validate";
@@ -28,6 +29,11 @@ export class Bamboo {
         this._auth = auth;
 
         this._link = GreenLink.create(this._path, this._auth);
+    }
+
+    public async accountHistoryRecord(body: AccountHistoryRecordRequest): Promise<AccountHistoryRecordResponse> {
+
+        return await this._link.post<AccountHistoryRecordResponse>(body, 'account', 'history', 'record');
     }
 
     public async detailAccount(username: string): Promise<CommonAccountStatusDetailResponse> {
