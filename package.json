@@ -1,6 +1,6 @@
 {
   "name": "@brontosaurus/bamboo",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": ":tanabata_tree: Green SDK",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "@sudoo/io": "^1.6.1",
+    "@sudoo/io": "^1.6.2",
     "@sudoo/triforce": "^2.1.0",
     "@types/request": "^2.48.4"
   },
