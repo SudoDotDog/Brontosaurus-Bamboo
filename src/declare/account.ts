@@ -4,17 +4,25 @@
  * @description Account
  */
 
-import { Basics, CommonRegisterAccountResponse } from "./common";
+import { Basics } from "./common";
 
 export type AccountLite = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly displayName?: string;
+};
+
+export type DetailAccountRequest = {
+
+    readonly username: string;
+    readonly namespace: string;
 };
 
 export type LimboAccountRequest = {
 
     readonly username: string;
+    readonly namespace: string;
 };
 
 export type LimboAccountResponse = {
@@ -44,6 +52,7 @@ export type QueryAccountResponse = {
 export type RegisterAccountRequest = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly userInfos: Record<string, Basics>;
     readonly userGroups: string[];
     readonly userTags: string[];
@@ -53,13 +62,20 @@ export type RegisterAccountRequest = {
     readonly userPhone?: string;
 };
 
-export type UpdateAccountRouteRequest = {
+export type UpdateAccountRequest = {
 
     readonly username: string;
+    readonly namespace: string;
 
     readonly displayName?: string;
     readonly email?: string;
     readonly phone?: string;
+};
+
+export type VerifyAccountRequest = {
+
+    readonly username: string;
+    readonly namespace: string;
 };
 
 export type VerifyAccountResponse = {

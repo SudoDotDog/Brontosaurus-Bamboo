@@ -14,10 +14,12 @@ export type AccountActions = {
 
 export type AccountHistoryRecordRequest = {
 
-    readonly target: string;
+    readonly username: string;
+    readonly namespace: string;
 
     readonly type: keyof AccountActions;
-    readonly by: string;
+    readonly byUsername: string;
+    readonly byNamespace: string;
     readonly application: string;
     readonly content: string;
 };

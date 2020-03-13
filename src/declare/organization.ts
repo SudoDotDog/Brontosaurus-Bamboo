@@ -17,6 +17,7 @@ export type InplodeOrganizationRequest = {
     readonly organizationTags: string[];
     readonly ownerInfos: Record<string, Basics>;
     readonly ownerUsername: string;
+    readonly ownerNamespace: string;
     readonly ownerGroups: string[];
     readonly ownerTags: string[];
 
@@ -45,6 +46,7 @@ export type RegisterSubAccountRequest = {
     readonly organization: string;
 
     readonly username: string;
+    readonly namespace: string;
     readonly userInfos: Record<string, Basics>;
     readonly userGroups: string[];
     readonly userTags: string[];

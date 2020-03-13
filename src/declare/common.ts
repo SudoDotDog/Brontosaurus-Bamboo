@@ -9,6 +9,7 @@ export declare type Basics = string | number | boolean;
 export type CommonRegisterAccountResponse = {
 
     readonly account: string;
+    readonly namespace: string;
     readonly tempPassword: string;
 };
 
@@ -16,6 +17,7 @@ export type CommonAccountDetailResponse = {
 
     readonly active: boolean;
     readonly username: string;
+    readonly namespace;
 
     readonly email?: string;
     readonly phone?: string;

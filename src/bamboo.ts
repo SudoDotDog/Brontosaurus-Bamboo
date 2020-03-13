@@ -4,7 +4,7 @@
  * @description Bamboo
  */
 
-import { LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRouteRequest, VerifyAccountResponse } from "./declare/account";
+import { DetailAccountRequest, LimboAccountRequest, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRequest, VerifyAccountRequest, VerifyAccountResponse } from "./declare/account";
 import { AccountHistoryRecordRequest, AccountHistoryRecordResponse } from "./declare/account-history";
 import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse } from "./declare/common";
 import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse, RegisterSubAccountRequest, RegisterSubAccountResponse, VerifyOrganizationResponse } from "./declare/organization";
@@ -36,9 +36,9 @@ export class Bamboo {
         return await this._link.post<AccountHistoryRecordResponse>(body, 'account', 'history', 'record');
     }
 
-    public async detailAccount(username: string): Promise<CommonAccountStatusDetailResponse> {
+    public async detailAccount(body: DetailAccountRequest): Promise<CommonAccountStatusDetailResponse> {
 
-        return await this._link.get<CommonAccountStatusDetailResponse>('account', 'detail', username);
+        return await this._link.post<CommonAccountStatusDetailResponse>(body, 'account', 'detail');
     }
 
     public async limboAccount(body: LimboAccountRequest): Promise<LimboAccountResponse> {
@@ -56,14 +56,14 @@ export class Bamboo {
         return await this._link.post<CommonRegisterAccountResponse>(body, 'account', 'register');
     }
 
-    public async updateAccount(body: UpdateAccountRouteRequest): Promise<CommonAccountStatusDetailResponse> {
+    public async updateAccount(body: UpdateAccountRequest): Promise<CommonAccountStatusDetailResponse> {
 
         return await this._link.post<CommonAccountStatusDetailResponse>(body, 'account', 'update');
     }
 
-    public async verifyAccount(username: string): Promise<VerifyAccountResponse> {
+    public async verifyAccount(body: VerifyAccountRequest): Promise<VerifyAccountResponse> {
 
-        return await this._link.get<VerifyAccountResponse>('account', 'verify', username);
+        return await this._link.post<VerifyAccountResponse>(body, 'account', 'verify');
     }
 
     public async queryOrganization(body: QueryOrganizationRequest): Promise<QueryOrganizationResponse> {
