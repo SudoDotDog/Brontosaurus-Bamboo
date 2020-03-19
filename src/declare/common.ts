@@ -6,6 +6,25 @@
 
 export declare type Basics = string | number | boolean;
 
+export type IdentityUsernameNamespace = {
+
+    readonly username: string;
+    readonly namespace: string;
+};
+
+export type IdentityCombined = {
+
+    readonly combined: string;
+};
+
+export type IdentityOptions =
+    ({
+        readonly type: 'username-namespace';
+    } & IdentityUsernameNamespace)
+    | ({
+        readonly type: 'combined';
+    } & IdentityCombined);
+
 export type CommonRegisterAccountResponse = {
 
     readonly account: string;

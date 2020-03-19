@@ -14,9 +14,6 @@ export type AccountActions = {
 
 export type AccountHistoryRecordRequest = {
 
-    readonly username: string;
-    readonly namespace: string;
-
     readonly type: keyof AccountActions;
     readonly byUsername: string;
     readonly byNamespace: string;

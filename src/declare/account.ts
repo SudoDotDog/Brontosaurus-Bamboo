@@ -13,18 +13,6 @@ export type AccountLite = {
     readonly displayName?: string;
 };
 
-export type DetailAccountRequest = {
-
-    readonly username: string;
-    readonly namespace: string;
-};
-
-export type LimboAccountRequest = {
-
-    readonly username: string;
-    readonly namespace: string;
-};
-
 export type LimboAccountResponse = {
 
     readonly limbo: boolean;
@@ -52,8 +40,6 @@ export type QueryAccountResponse = {
 
 export type RegisterAccountRequest = {
 
-    readonly username: string;
-    readonly namespace: string;
     readonly userInfos: Record<string, Basics>;
     readonly userGroups: string[];
     readonly userTags: string[];
@@ -65,18 +51,9 @@ export type RegisterAccountRequest = {
 
 export type UpdateAccountRequest = {
 
-    readonly username: string;
-    readonly namespace: string;
-
     readonly displayName?: string;
     readonly email?: string;
     readonly phone?: string;
-};
-
-export type VerifyAccountRequest = {
-
-    readonly username: string;
-    readonly namespace: string;
 };
 
 export type VerifyAccountResponse = {
