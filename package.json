@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Bamboo#readme",
   "dependencies": {
+    "@sudoo/magic": "^1.6.0",
     "request": "^2.88.2"
   },
   "devDependencies": {

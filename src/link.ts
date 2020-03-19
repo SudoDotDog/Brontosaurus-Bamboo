@@ -4,6 +4,7 @@
  * @description Link
  */
 
+import { HTTP_RESPONSE_CODE } from "@sudoo/magic";
 import * as Request from "request";
 import { validateGreenAuth, validateGreenPath } from "./util";
 
@@ -51,7 +52,7 @@ export class GreenLink {
                     return;
                 }
 
-                if (response.statusCode !== 200) {
+                if (response.statusCode !== HTTP_RESPONSE_CODE.OK) {
                     reject(response.statusCode);
                     return;
                 }
@@ -81,7 +82,7 @@ export class GreenLink {
                     return;
                 }
 
-                if (response.statusCode !== 200) {
+                if (response.statusCode !== HTTP_RESPONSE_CODE.OK) {
                     reject(response.statusCode);
                     return;
                 }

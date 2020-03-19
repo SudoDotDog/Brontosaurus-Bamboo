@@ -40,6 +40,7 @@ export type QueryAccountRequest = {
 export type QueryAccountElement = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly groups: string[];
     readonly displayName?: string;
 };
