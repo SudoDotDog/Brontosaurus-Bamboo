@@ -1,6 +1,6 @@
 {
   "name": "@brontosaurus/bamboo",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "description": ":tanabata_tree: Green SDK",
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Bamboo#readme",
   "dependencies": {
+    "@brontosaurus/definition": "^3.2.2",
     "@sudoo/magic": "^1.6.0",
     "request": "^2.88.2"
   },
