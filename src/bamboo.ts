@@ -6,6 +6,7 @@
 
 import { LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRequest, VerifyAccountResponse } from "./declare/account";
 import { AccountHistoryRecordRequest, AccountHistoryRecordResponse } from "./declare/account-history";
+import { AccountTagReplaceRequest, AccountTagReplaceResponse } from "./declare/account-tag";
 import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse, IdentityOptions, IdentityUsernameNamespace } from "./declare/common";
 import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse, RegisterSubAccountRequest, RegisterSubAccountResponse, VerifyOrganizationResponse } from "./declare/organization";
 import { ValidateBridgeRequest, ValidateBridgeResponse, ValidateDirectRequest, ValidateDirectResponse } from "./declare/validate";
@@ -35,6 +36,11 @@ export class Bamboo {
     public async accountHistoryRecord(identity: IdentityOptions, body: AccountHistoryRecordRequest): Promise<AccountHistoryRecordResponse> {
 
         return await this._link.post<AccountHistoryRecordResponse>(this._buildIdentityBody(identity, body), 'account', 'history', 'record');
+    }
+
+    public async replaceAccountTag(identity: IdentityOptions, body: AccountTagReplaceRequest): Promise<AccountTagReplaceResponse> {
+
+        return await this._link.post<AccountTagReplaceResponse>(this._buildIdentityBody(identity, body), 'account', 'tag', 'replace');
     }
 
     public async detailAccount(identity: IdentityOptions): Promise<CommonAccountStatusDetailResponse> {
