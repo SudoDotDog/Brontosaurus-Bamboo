@@ -51,6 +51,7 @@ export type RegisterAccountRequest = {
 
 export type UpdateAccountRequest = {
 
+    readonly avatar?: string;
     readonly displayName?: string;
     readonly email?: string;
     readonly phone?: string;
