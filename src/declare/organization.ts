@@ -21,6 +21,7 @@ export type InplodeOrganizationRequest = {
     readonly ownerGroups: string[];
     readonly ownerTags: string[];
 
+    readonly ownerPassword?: string;
     readonly ownerDisplayName?: string;
     readonly ownerEmail?: string;
     readonly ownerPhone?: string;
@@ -29,7 +30,10 @@ export type InplodeOrganizationRequest = {
 export type InplodeOrganizationResponse = {
 
     readonly organization: string;
-} & CommonRegisterAccountResponse;
+    readonly account: string;
+    readonly namespace: string;
+    readonly tempPassword?: string;
+};
 
 export type QueryOrganizationRequest = {
 
