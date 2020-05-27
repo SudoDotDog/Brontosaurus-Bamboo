@@ -16,14 +16,14 @@
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Bamboo#readme",
   "dependencies": {
-    "@brontosaurus/definition": "^3.3.0",
+    "@brontosaurus/definition": "^3.4.0",
     "@sudoo/magic": "^1.8.0",
     "request": "^2.88.2"
   },
   "devDependencies": {
     "@sudoo/io": "^1.7.0",
-    "@sudoo/triforce": "^2.3.1",
-    "@types/request": "^2.48.4"
+    "@sudoo/triforce": "^2.4.1",
+    "@types/request": "^2.48.5"
   },
   "nyc": {
     "extension": [
