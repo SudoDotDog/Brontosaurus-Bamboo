@@ -21,6 +21,7 @@ coverage
 dist
 temp
 app
+temp.txt
 
 # lock
 yarn.lock

@@ -28,13 +28,10 @@ describe('Given [Util] Help Functions', (): void => {
 
         const url: string = 'ftp://example.com';
         const url2: string = 'http/example.com';
-        const url3: string = 'https://hello';
 
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url)).to.be.false;
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url2)).to.be.false;
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        expect(validateGreenPath(url3)).to.be.false;
     });
 });

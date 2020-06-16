@@ -21,9 +21,11 @@ export type LimboAccountResponse = {
 
 export type QueryAccountRequest = {
 
-    readonly organizations: string[];
-    readonly groups: string[];
-    readonly tags: string[];
+    readonly organizations?: string[];
+    readonly groups?: string[];
+    readonly groupsMode?: 'and' | 'or';
+    readonly tags?: string[];
+    readonly tagsMode?: 'and' | 'or';
 };
 
 export type QueryAccountElement = {

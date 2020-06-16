@@ -61,7 +61,13 @@ export class Bamboo {
 
     public async queryAccount(body: QueryAccountRequest): Promise<QueryAccountResponse> {
 
-        return await this._link.post<QueryAccountResponse>(body, 'account', 'query');
+        const fixedRequest: QueryAccountRequest = {
+            organizations: [],
+            groups: [],
+            tags: [],
+            ...body,
+        }
+        return await this._link.post<QueryAccountResponse>(fixedRequest, 'account', 'query');
     }
 
     public async registerAccount(identity: IdentityOptions, body: RegisterAccountRequest): Promise<CommonRegisterAccountResponse> {
