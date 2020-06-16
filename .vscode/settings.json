@@ -9,6 +9,7 @@
         "deserialize",
         "ifeq",
         "inplode",
+        "mocharc",
         "setx",
         "splited",
         "sudoo",
@@ -16,5 +17,7 @@
         "triforce",
         "tshook"
     ],
-    "tslint.configFile": "typescript/tslint.json"
+    "eslint.options": {
+        "configFile": "./typescript/.eslintrc.json"
+    }
 }
