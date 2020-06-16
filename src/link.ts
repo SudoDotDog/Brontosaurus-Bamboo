@@ -10,7 +10,7 @@ import { validateGreenAuth, validateGreenPath } from "./util";
 
 export class GreenLink {
 
-    public static create(path: string, auth: string) {
+    public static create(path: string, auth: string): GreenLink {
 
         if (!validateGreenPath(path)) {
             throw new Error('[Brontosaurus-Bamboo] Invalid Path');

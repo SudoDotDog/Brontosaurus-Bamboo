@@ -23,6 +23,7 @@ export type QueryAccountRequest = {
 
     readonly organizations: string[];
     readonly groups: string[];
+    readonly tags: string[];
 };
 
 export type QueryAccountElement = {

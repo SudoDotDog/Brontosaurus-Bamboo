@@ -6,7 +6,6 @@
  */
 
 import { expect } from 'chai';
-import * as Chance from 'chance';
 import { validateGreenPath } from '../../src/util';
 
 describe('Given [Util] Help Functions', (): void => {
@@ -17,11 +16,11 @@ describe('Given [Util] Help Functions', (): void => {
         const url2: string = 'http://example.com';
         const url3: string = 'http://example.com/sub-path';
 
-        // tslint:disable-next-line: no-unused-expression
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url)).to.be.true;
-        // tslint:disable-next-line: no-unused-expression
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url2)).to.be.true;
-        // tslint:disable-next-line: no-unused-expression
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url3)).to.be.true;
     });
 
@@ -31,11 +30,11 @@ describe('Given [Util] Help Functions', (): void => {
         const url2: string = 'http/example.com';
         const url3: string = 'https://hello';
 
-        // tslint:disable-next-line: no-unused-expression
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url)).to.be.false;
-        // tslint:disable-next-line: no-unused-expression
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url2)).to.be.false;
-        // tslint:disable-next-line: no-unused-expression
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(validateGreenPath(url3)).to.be.false;
     });
 });
