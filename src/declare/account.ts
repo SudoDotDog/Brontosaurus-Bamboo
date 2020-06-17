@@ -33,6 +33,8 @@ export type QueryAccountElement = {
     readonly username: string;
     readonly namespace: string;
     readonly groups: string[];
+    readonly tags: string[];
+    readonly organization?: string;
     readonly displayName?: string;
 };
 

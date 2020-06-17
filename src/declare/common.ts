@@ -47,4 +47,8 @@ export type CommonAccountStatusDetailResponse = {
 
     readonly twoFA: boolean;
     readonly limbo: boolean;
+
+    readonly groups: string[];
+    readonly tags: string[];
+    readonly organization?: string;
 } & CommonAccountDetailResponse;
