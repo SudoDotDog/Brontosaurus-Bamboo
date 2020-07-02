@@ -37,8 +37,8 @@ export type InplodeOrganizationResponse = {
 
 export type QueryOrganizationRequest = {
 
-    readonly activation?: 'activate' | 'inactivate';
-    readonly tags: string[];
+    readonly activation?: 'active' | 'inactive';
+    readonly tags?: string[];
 };
 
 export type QueryOrganizationElement = {

@@ -83,7 +83,7 @@ export class GreenLink {
                 }
 
                 if (response.statusCode !== HTTP_RESPONSE_CODE.OK) {
-                    reject(response.statusCode);
+                    reject(responseBody);
                     return;
                 }
 

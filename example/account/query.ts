@@ -16,7 +16,7 @@ import { QueryAccountResponse } from "../../src/declare/account";
     const result: QueryAccountResponse = await bamboo.queryAccount({
 
         // spell-checker:disable
-        activation: 'inactivate',
+        activation: 'inactive',
         namespace: 'com.namespace.new',
         organizations: ['testclient6'],
         // spell-checker:enable

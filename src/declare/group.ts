@@ -16,5 +16,5 @@ export type QueryGroupResponse = {
 
 export type QueryGroupRequest = {
 
-    readonly activation?: 'activate' | 'inactivate';
+    readonly activation?: 'active' | 'inactive';
 };

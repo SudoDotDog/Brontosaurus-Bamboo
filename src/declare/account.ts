@@ -21,7 +21,7 @@ export type LimboAccountResponse = {
 
 export type QueryAccountRequest = {
 
-    readonly activation?: 'activate' | 'inactivate';
+    readonly activation?: 'active' | 'inactive';
     readonly namespace?: string;
 
     readonly organizations?: string[];

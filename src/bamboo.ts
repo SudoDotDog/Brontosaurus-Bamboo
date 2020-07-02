@@ -9,7 +9,11 @@ import { AccountGroupReplaceRequest, AccountGroupReplaceResponse } from "./decla
 import { AccountHistoryRecordRequest, AccountHistoryRecordResponse } from "./declare/account-history";
 import { AccountTagReplaceRequest, AccountTagReplaceResponse } from "./declare/account-tag";
 import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse, IdentityOptions, IdentityUsernameNamespace } from "./declare/common";
+import { QueryDecoratorRequest, QueryDecoratorResponse } from "./declare/decorator";
+import { QueryGroupRequest, QueryGroupResponse } from "./declare/group";
+import { QueryNamespaceRequest, QueryNamespaceResponse } from "./declare/namespace";
 import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse, RegisterSubAccountRequest, RegisterSubAccountResponse, VerifyOrganizationResponse } from "./declare/organization";
+import { QueryTagRequest, QueryTagResponse } from "./declare/tag";
 import { ValidateBridgeRequest, ValidateBridgeResponse, ValidateDirectRequest, ValidateDirectResponse } from "./declare/validate";
 import { GreenLink } from "./link";
 import { ParseCombinedResult, parseUsernameNamespaceCombined } from "./parse";
@@ -87,7 +91,11 @@ export class Bamboo {
 
     public async queryOrganization(body: QueryOrganizationRequest): Promise<QueryOrganizationResponse> {
 
-        return await this._link.post<QueryOrganizationResponse>(body, 'organization', 'query');
+        const fixedRequest: QueryOrganizationRequest = {
+            tags: [],
+            ...body,
+        }
+        return await this._link.post<QueryOrganizationResponse>(fixedRequest, 'organization', 'query');
     }
 
     public async inplodeOrganization(body: InplodeOrganizationRequest): Promise<InplodeOrganizationResponse> {
@@ -103,6 +111,26 @@ export class Bamboo {
     public async verifyOrganization(name: string): Promise<VerifyOrganizationResponse> {
 
         return await this._link.get<VerifyOrganizationResponse>('organization', 'verify', name);
+    }
+
+    public async queryDecorator(body: QueryDecoratorRequest): Promise<QueryDecoratorResponse> {
+
+        return await this._link.post<QueryDecoratorResponse>(body, 'decorator', 'query')
+    }
+
+    public async queryGroup(body: QueryGroupRequest): Promise<QueryGroupResponse> {
+
+        return await this._link.post<QueryGroupResponse>(body, 'group', 'query')
+    }
+
+    public async queryNamespace(body: QueryNamespaceRequest): Promise<QueryNamespaceResponse> {
+
+        return await this._link.post<QueryNamespaceResponse>(body, 'namespace', 'query')
+    }
+
+    public async queryTag(body: QueryTagRequest): Promise<QueryTagResponse> {
+
+        return await this._link.post<QueryTagResponse>(body, 'tag', 'query')
     }
 
     public async validateBridge(body: ValidateBridgeRequest): Promise<ValidateBridgeResponse> {

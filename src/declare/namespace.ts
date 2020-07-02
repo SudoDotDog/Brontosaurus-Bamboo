@@ -17,5 +17,5 @@ export type QueryNamespaceResponse = {
 
 export type QueryNamespaceRequest = {
 
-    readonly activation?: 'activate' | 'inactivate';
+    readonly activation?: 'active' | 'inactive';
 };

@@ -16,5 +16,5 @@ export type QueryDecoratorResponse = {
 
 export type QueryDecoratorRequest = {
 
-    readonly activation?: 'activate' | 'inactivate';
+    readonly activation?: 'active' | 'inactive';
 };

@@ -16,5 +16,5 @@ export type QueryTagResponse = {
 
 export type QueryTagRequest = {
 
-    readonly activation?: 'activate' | 'inactivate';
+    readonly activation?: 'active' | 'inactive';
 };
