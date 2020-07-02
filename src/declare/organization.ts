@@ -37,12 +37,18 @@ export type InplodeOrganizationResponse = {
 
 export type QueryOrganizationRequest = {
 
+    readonly activation?: 'activate' | 'inactivate';
     readonly tags: string[];
+};
+
+export type QueryOrganizationElement = {
+
+    readonly name: string;
 };
 
 export type QueryOrganizationResponse = {
 
-    readonly names: string[];
+    readonly organizations: QueryOrganizationElement[];
 };
 
 export type RegisterSubAccountRequest = {
