@@ -13,12 +13,18 @@ import { CommonAccountDetailResponse } from "../../src/declare/common";
     const key: string = process.env.KEY as string;
     const bamboo: Bamboo = Bamboo.create('http://localhost:8500', key);
 
-    const result: CommonAccountDetailResponse = await bamboo.detailAccount({
+    try {
 
-        type: 'username-namespace',
+        const result: CommonAccountDetailResponse = await bamboo.detailAccount({
 
-        username: 'admin',
-        namespace: 'brontosaurus.admin',
-    });
-    console.log(JSON.stringify(result, null, 2));
+            type: 'username-namespace',
+
+            username: 'admin',
+            namespace: 'brontosaurus.admin',
+        });
+        console.log(JSON.stringify(result, null, 2));
+    } catch (err) {
+
+        console.log(err);
+    }
 })();
