@@ -6,7 +6,6 @@
 
 import { LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRequest, VerifyAccountResponse } from "./declare/account";
 import { AccountGroupReplaceRequest, AccountGroupReplaceResponse } from "./declare/account-group";
-import { AccountHistoryRecordRequest, AccountHistoryRecordResponse } from "./declare/account-history";
 import { AccountTagReplaceRequest, AccountTagReplaceResponse } from "./declare/account-tag";
 import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse, IdentityOptions, IdentityUsernameNamespace } from "./declare/common";
 import { QueryDecoratorRequest, QueryDecoratorResponse } from "./declare/decorator";
@@ -36,11 +35,6 @@ export class Bamboo {
         this._auth = auth;
 
         this._link = GreenLink.create(this._path, this._auth);
-    }
-
-    public async accountHistoryRecord(identity: IdentityOptions, body: AccountHistoryRecordRequest): Promise<AccountHistoryRecordResponse> {
-
-        return await this._link.post<AccountHistoryRecordResponse>(this._buildIdentityBody(identity, body), 'account', 'history', 'record');
     }
 
     public async replaceAccountTags(identity: IdentityOptions, body: AccountTagReplaceRequest): Promise<AccountTagReplaceResponse> {
