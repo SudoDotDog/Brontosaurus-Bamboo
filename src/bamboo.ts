@@ -86,7 +86,7 @@ export class Bamboo {
 
     public async fetchPublicKey(body: FetchPublicKeyRequest): Promise<FetchPublicKeyResponse> {
 
-        return await this._link.post<FetchPublicKeyResponse>(body);
+        return await this._link.post<FetchPublicKeyResponse>(body, 'application', 'public-key', 'fetch');
     }
 
     public async queryOrganization(body: QueryOrganizationRequest): Promise<QueryOrganizationResponse> {
