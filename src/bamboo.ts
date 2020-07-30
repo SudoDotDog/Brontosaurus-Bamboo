@@ -7,6 +7,7 @@
 import { LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRequest, VerifyAccountResponse } from "./declare/account";
 import { AccountGroupReplaceRequest, AccountGroupReplaceResponse } from "./declare/account-group";
 import { AccountTagReplaceRequest, AccountTagReplaceResponse } from "./declare/account-tag";
+import { FetchPublicKeyRequest, FetchPublicKeyResponse } from "./declare/application";
 import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse, IdentityOptions, IdentityUsernameNamespace } from "./declare/common";
 import { QueryDecoratorRequest, QueryDecoratorResponse } from "./declare/decorator";
 import { QueryGroupRequest, QueryGroupResponse } from "./declare/group";
@@ -81,6 +82,11 @@ export class Bamboo {
     public async verifyAccount(identity: IdentityOptions): Promise<VerifyAccountResponse> {
 
         return await this._link.post<VerifyAccountResponse>(this._buildIdentityBody(identity), 'account', 'verify');
+    }
+
+    public async fetchPublicKey(body: FetchPublicKeyRequest): Promise<FetchPublicKeyResponse> {
+
+        return await this._link.post<FetchPublicKeyResponse>(body);
     }
 
     public async queryOrganization(body: QueryOrganizationRequest): Promise<QueryOrganizationResponse> {
