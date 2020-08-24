@@ -65,7 +65,7 @@ export class Bamboo {
             groups: [],
             tags: [],
             ...body,
-        }
+        };
         return await this._link.post<QueryAccountResponse>(fixedRequest, 'account', 'query');
     }
 
@@ -94,7 +94,7 @@ export class Bamboo {
         const fixedRequest: QueryOrganizationRequest = {
             tags: [],
             ...body,
-        }
+        };
         return await this._link.post<QueryOrganizationResponse>(fixedRequest, 'organization', 'query');
     }
 
@@ -115,22 +115,22 @@ export class Bamboo {
 
     public async queryDecorator(body: QueryDecoratorRequest): Promise<QueryDecoratorResponse> {
 
-        return await this._link.post<QueryDecoratorResponse>(body, 'decorator', 'query')
+        return await this._link.post<QueryDecoratorResponse>(body, 'decorator', 'query');
     }
 
     public async queryGroup(body: QueryGroupRequest): Promise<QueryGroupResponse> {
 
-        return await this._link.post<QueryGroupResponse>(body, 'group', 'query')
+        return await this._link.post<QueryGroupResponse>(body, 'group', 'query');
     }
 
     public async queryNamespace(body: QueryNamespaceRequest): Promise<QueryNamespaceResponse> {
 
-        return await this._link.post<QueryNamespaceResponse>(body, 'namespace', 'query')
+        return await this._link.post<QueryNamespaceResponse>(body, 'namespace', 'query');
     }
 
     public async queryTag(body: QueryTagRequest): Promise<QueryTagResponse> {
 
-        return await this._link.post<QueryTagResponse>(body, 'tag', 'query')
+        return await this._link.post<QueryTagResponse>(body, 'tag', 'query');
     }
 
     public async validateBridge(body: ValidateBridgeRequest): Promise<ValidateBridgeResponse> {
