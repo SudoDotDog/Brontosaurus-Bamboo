@@ -41,10 +41,13 @@ export type QueryAccountElement = {
     readonly tags: string[];
     readonly organization?: string;
     readonly displayName?: string;
+    readonly email?: string;
+    readonly phone?: string;
 };
 
 export type QueryAccountResponse = {
 
+    readonly count: number;
     readonly accounts: QueryAccountElement[];
 };
 
