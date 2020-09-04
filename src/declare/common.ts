@@ -38,6 +38,7 @@ export type CommonAccountDetailResponse = {
     readonly username: string;
     readonly namespace: string;
 
+    readonly avatar?: string;
     readonly email?: string;
     readonly phone?: string;
     readonly displayName?: string;

@@ -70,6 +70,20 @@ export type UpdateAccountRequest = {
     readonly phone?: string;
 };
 
+export type UpdateAccountResponse = {
+
+    readonly active: boolean;
+    readonly saved: boolean;
+    readonly username: string;
+    readonly limbo: boolean;
+    readonly twoFA: boolean;
+
+    readonly avatar?: string;
+    readonly email?: string;
+    readonly phone?: string;
+    readonly displayName?: string;
+};
+
 export type VerifyAccountResponse = {
 
     readonly valid: false;
