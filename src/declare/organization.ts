@@ -76,3 +76,25 @@ export type VerifyOrganizationResponse = {
     readonly valid: true;
     readonly organization: OrganizationLite;
 };
+
+export type OrganizationAddTagRequest = {
+
+    readonly organization: string;
+    readonly tag: string;
+};
+
+export type OrganizationAddTagResponse = {
+
+    readonly organization: string;
+};
+
+export type OrganizationRemoveTagRequest = {
+
+    readonly organization: string;
+    readonly tag: string;
+};
+
+export type OrganizationRemoveTagResponse = {
+
+    readonly organization: string;
+};
