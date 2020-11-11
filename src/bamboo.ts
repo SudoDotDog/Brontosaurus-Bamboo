@@ -12,7 +12,7 @@ import { CommonAccountStatusDetailResponse, CommonRegisterAccountResponse, Ident
 import { QueryDecoratorRequest, QueryDecoratorResponse } from "./declare/decorator";
 import { QueryGroupRequest, QueryGroupResponse } from "./declare/group";
 import { QueryNamespaceRequest, QueryNamespaceResponse } from "./declare/namespace";
-import { InplodeOrganizationRequest, InplodeOrganizationResponse, QueryOrganizationRequest, QueryOrganizationResponse, RegisterSubAccountRequest, RegisterSubAccountResponse, VerifyOrganizationResponse } from "./declare/organization";
+import { InplodeOrganizationRequest, InplodeOrganizationResponse, OrganizationAddTagRequest, OrganizationAddTagResponse, OrganizationRemoveTagRequest, OrganizationRemoveTagResponse, QueryOrganizationRequest, QueryOrganizationResponse, RegisterSubAccountRequest, RegisterSubAccountResponse, VerifyOrganizationResponse } from "./declare/organization";
 import { QueryTagRequest, QueryTagResponse } from "./declare/tag";
 import { ValidateBridgeRequest, ValidateBridgeResponse, ValidateDirectRequest, ValidateDirectResponse } from "./declare/validate";
 import { GreenLink } from "./link";
@@ -111,6 +111,16 @@ export class Bamboo {
     public async verifyOrganization(name: string): Promise<VerifyOrganizationResponse> {
 
         return await this._link.get<VerifyOrganizationResponse>('organization', 'verify', name);
+    }
+
+    public async addTagToOrganization(body: OrganizationAddTagRequest): Promise<OrganizationAddTagResponse> {
+
+        return await this._link.post<OrganizationAddTagResponse>(body, 'organization', 'add-tag');
+    }
+
+    public async removeTagToOrganization(body: OrganizationRemoveTagRequest): Promise<OrganizationRemoveTagResponse> {
+
+        return await this._link.post<OrganizationRemoveTagResponse>(body, 'organization', 'remove-tag');
     }
 
     public async queryDecorator(body: QueryDecoratorRequest): Promise<QueryDecoratorResponse> {
