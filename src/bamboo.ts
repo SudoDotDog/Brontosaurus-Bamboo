@@ -4,7 +4,7 @@
  * @description Bamboo
  */
 
-import { LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRequest, UpdateAccountResponse, VerifyAccountResponse } from "./declare/account";
+import { ActivateAccountResponse, DeactivateAccountResponse, LimboAccountResponse, QueryAccountRequest, QueryAccountResponse, RegisterAccountRequest, UpdateAccountRequest, UpdateAccountResponse, VerifyAccountResponse } from "./declare/account";
 import { AccountGroupReplaceRequest, AccountGroupReplaceResponse } from "./declare/account-group";
 import { AccountTagReplaceRequest, AccountTagReplaceResponse } from "./declare/account-tag";
 import { FetchPublicKeyRequest, FetchPublicKeyResponse } from "./declare/application";
@@ -46,6 +46,16 @@ export class Bamboo {
     public async replaceAccountGroups(identity: IdentityOptions, body: AccountGroupReplaceRequest): Promise<AccountGroupReplaceResponse> {
 
         return await this._link.post<AccountGroupReplaceResponse>(this._buildIdentityBody(identity, body), 'account', 'group', 'replace');
+    }
+
+    public async activateAccount(identity: IdentityOptions): Promise<ActivateAccountResponse> {
+
+        return await this._link.post<ActivateAccountResponse>(this._buildIdentityBody(identity), 'account', 'activate');
+    }
+
+    public async deactivateAccount(identity: IdentityOptions): Promise<DeactivateAccountResponse> {
+
+        return await this._link.post<DeactivateAccountResponse>(this._buildIdentityBody(identity), 'account', 'deactivate');
     }
 
     public async detailAccount(identity: IdentityOptions): Promise<CommonAccountStatusDetailResponse> {

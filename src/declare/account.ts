@@ -13,6 +13,16 @@ export type AccountLite = {
     readonly displayName?: string;
 };
 
+export type ActivateAccountResponse = {
+
+    readonly activate: boolean;
+};
+
+export type DeactivateAccountResponse = {
+
+    readonly deactivate: boolean;
+};
+
 export type LimboAccountResponse = {
 
     readonly limbo: boolean;
